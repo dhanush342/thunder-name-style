@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+body {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    height: 200px;
+}
+
+.text-container {
+    display: flex;
+    font-size: 100px;
+    text-transform: uppercase;
+    gap: 10px;
+}
+
+.letter {
+    opacity: 0;
+    color: #ffffff;
+    text-shadow: 
+        0 0 20px rgba(0, 191, 255, 1),
+        0 0 40px rgba(0, 191, 255, 0.9),
+        0 0 60px rgba(255, 255, 255, 1);
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes thunderEffect {
+    0% { transform: rotate(0deg) scale(1); text-shadow: 0 0 40px rgba(0, 191, 255, 1), 0 0 60px rgba(255, 255, 255, 1); }
+    50% { transform: rotate(1deg) scale(1.05); text-shadow: 0 0 100px rgba(0, 191, 255, 1), 0 0 140px rgba(255, 255, 255, 1); }
+    100% { transform: rotate(-1deg) scale(1); text-shadow: 0 0 50px rgba(0, 191, 255, 1), 0 0 90px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes shockEffect {
+    0% { transform: translateX(0px); text-shadow: 0 0 50px cyan, 0 0 90px white; }
+    25% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); text-shadow: 0 0 100px cyan, 0 0 140px white; }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0px); }
+}
+
+.lightning-flash {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    animation: none;
+}
+
+@keyframes lightningFlashEffect {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+input {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    background: black;
+    color: white;
+    border: 1px solid cyan;
+    border-radius: 5px;
+}
